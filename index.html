@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLA.STORE | Online Shop</title>
+    <style>
+        /* Reset e Stili Generali */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header e Navigazione */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #111;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?fm=jpg&q=80&w=1200') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Griglia Prodotti */
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #111;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .btn-add {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-add:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigazione -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">SLA.STORE</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Prodotti</a></li>
+                <li><a href="#">Info</a></li>
+                <li><a href="#">Contatti</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Banner Principale -->
+    <section class="hero">
+        <h1>Nuova Collezione</h1>
+        <p>Scopri i prodotti esclusivi di SLA.STORE</p>
+    </section>
+
+    <!-- Sezione Prodotti -->
+    <main class="main-container">
+        <h2 class="section-title">I Nostri Prodotti</h2>
+        
+        <div class="products-grid">
+            
+            <!-- Prodotto 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500" alt="Prodotto 1" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Nome Prodotto 1</h3>
+                    <div class="product-price">€49,99</div>
+                    <a href="#" class="btn-add">Aggiungi al carrello</a>
+                </div>
+            </div>
+
+            <!-- Prodotto 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500" alt="Prodotto 2" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Nome Prodotto 2</h3>
+                    <div class="product-price">€79,00</div>
+                    <a href="#" class="btn-add">Aggiungi al carrello</a>
+                </div>
+            </div>
+
+            <!-- Prodotto 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500" alt="Prodotto 3" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Nome Prodotto 3</h3>
+                    <div class="product-price">€120,00</div>
+                    <a href="#" class="btn-add">Aggiungi al carrello</a>
+                </div>
+            </div>
+
+            <!-- Prodotto 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=500" alt="Prodotto 4" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Nome Prodotto 4</h3>
+                    <div class="product-price">€25,50</div>
+                    <a href="#" class="btn-add">Aggiungi al carrello</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SLA.STORE. Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+</html>
