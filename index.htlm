@@ -1,1 +1,358 @@
-o
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLA.STORE | SNEAKERS & STYLE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Top Bar Avvisi */
+        .top-bar {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Header / Navigazione */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+        }
+
+        .menu-icon, .search-icon, .user-icon, .bag-icon {
+            font-size: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .header-left { display: flex; gap: 15px; }
+        .header-right { display: flex; gap: 15px; }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Sezione Titolo Principale */
+        .main-title-section {
+            text-align: center;
+            padding: 30px 10px 10px 10px;
+        }
+
+        .main-title-section h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        /* Griglia Categorie In Evidenza (2 Colonne) */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 15px;
+        }
+
+        .category-card {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-label {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: white;
+            color: black;
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Sezione Novità (Griglia a scorrimento o 2 colonne) */
+        .section-divider {
+            padding: 20px 15px 10px 15px;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        /* Scadenza Sconti / Countdown */
+        .countdown-box {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 25px 15px;
+            margin: 20px 0;
+        }
+
+        .countdown-box h3 {
+            color: #d93838;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .time-segment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-number {
+            font-size: 28px;
+            font-weight: 800;
+            background: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            min-width: 50px;
+        }
+
+        .time-label {
+            font-size: 10px;
+            font-weight: 600;
+            margin-top: 5px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* Info Spedizioni / Testo */
+        .info-text-section {
+            text-align: center;
+            padding: 30px 20px;
+            line-height: 1.6;
+        }
+
+        .info-text-section p {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .info-text-section a {
+            color: black;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* Vantaggi / Servizi (Assistenza e Cambio Taglia) */
+        .benefits-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .benefit-item h4 {
+            font-size: 13px;
+            font-weight: 800;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .benefit-item p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .benefit-icon {
+            font-size: 24px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            font-size: 13px;
+            color: #333;
+        }
+
+        footer p { margin-bottom: 10px; }
+        footer a { color: #666; text-decoration: none; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar Avvisi -->
+    <div class="top-bar">
+        SPEDIZIONE RAPIDA IN 2-4 GIORNI LAVORATIVI
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <button class="menu-icon">☰</button>
+            <button class="search-icon">🔍</button>
+        </div>
+        <a href="#" class="logo">SLA.STORE</a>
+        <div class="header-right">
+            <button class="user-icon">👤</button>
+            <button class="bag-icon">👜</button>
+        </div>
+    </header>
+
+    <!-- Titolo Principale -->
+    <div class="main-title-section">
+        <h1>PRODOTTI SCONTATISSIMI%</h1>
+    </div>
+
+    <!-- Griglia Categorie In Evidenza -->
+    <section class="featured-grid">
+        <div class="category-card">
+            <!-- Sostituisci l'URL del src con il link o percorso della tua foto scarpe -->
+            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=500" alt="Scarpe">
+            <div class="category-label">Scarpe%</div>
+        </div>
+        <div class="category-card">
+            <!-- Sostituisci con la foto borse -->
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=500" alt="Borse">
+            <div class="category-label">Borse/Borselli%</div>
+        </div>
+    </section>
+
+    <!-- Sezione Novità -->
+    <div class="section-divider">NOVITÀ</div>
+
+    <section class="featured-grid">
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=500" alt="Tute Calcio">
+            <div class="category-label">Tute Calcio</div>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=500" alt="Borse Donna">
+            <div class="category-label">Borse Donna</div>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=500" alt="Borselli Uomo">
+            <div class="category-label">Borselli Uomo</div>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1624222247344-550fb8ecf78d?q=80&w=500" alt="Cinte">
+            <div class="category-label">Cinte</div>
+        </div>
+    </section>
+
+    <!-- Sezione Info Testo -->
+    <section class="info-text-section">
+        <p style="font-weight: 800; font-size: 22px; margin-bottom: 15px;">SNEAKERS & STYLE</p>
+        <p>I prezzi più bassi d'italia!</p>
+        <p>Spedizioni rapide 2-4 giorni lavorativi</p>
+        <p>Trovate i video dettagliati nelle storie in evidenza su <a href="#">INSTAGRAM</a></p>
+    </section>
+
+    <!-- Scadenza Sconti (Countdown) -->
+    <section class="countdown-box">
+        <h3>SCADENZA SCONTI IN</h3>
+        <div class="timer">
+            <div class="time-segment">
+                <span class="time-number">00</span>
+                <span class="time-label">Giorni</span>
+            </div>
+            <div class="time-segment">
+                <span class="time-number">11</span>
+                <span class="time-label">Ore</span>
+            </div>
+            <div class="time-segment">
+                <span class="time-number">59</span>
+                <span class="time-label">Min</span>
+            </div>
+            <div class="time-segment">
+                <span class="time-number">41</span>
+                <span class="time-label">Sec</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider" style="text-align: center; font-size: 16px;">SOLO DA NOI</div>
+
+    <!-- Servizi / Benefit -->
+    <section class="benefits-section">
+        <div class="benefit-item">
+            <div class="benefit-icon">📱</div>
+            <h4>ASSISTENZA 24/7</h4>
+            <p>Per qualsiasi informazione potete inviarci un messaggio su Instagram o email.</p>
+        </div>
+        <div class="benefit-item">
+            <div class="benefit-icon">🔄</div>
+            <h4>CAMBIO TAGLIA DISPONIBILE</h4>
+            <p>Cambio del prodotto entro 14 giorni dalla consegna merce.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SLA.STORE</p>
+        <a href="#">Termini e informative</a>
+    </footer>
+
+    <!-- Script per far funzionare realmente il conto alla rovescia -->
+    <script>
+        // Setta il timer a 11 ore 59 minuti 41 secondi per il test dinamico
+        let totalSeconds = (11 * 3600) + (59 * 60) + 41;
+        const timeNumbers = document.querySelectorAll('.time-number');
+
+        setInterval(() => {
+            if (totalSeconds <= 0) return;
+            totalSeconds--;
+
+            const days = Math.floor(totalSeconds / (3600*24));
+            const hours = Math.floor((totalSeconds % (3600*24)) / 3600);
+            const mins = Math.floor((totalSeconds % 3600) / 60);
+            const secs = totalSeconds % 60;
+
+            timeNumbers[0].textContent = String(days).padStart(2, '0');
+            timeNumbers[1].textContent = String(hours).padStart(2, '0');
+            timeNumbers[2].textContent = String(mins).padStart(2, '0');
+            timeNumbers[3].textContent = String(secs).padStart(2, '0');
+        }, 1000);
+    </script>
+
+</body>
+</html>
